@@ -70,6 +70,13 @@ export default new Vuex.Store({
                 });
             });
         },
+        logout({ commit }) {
+            commit('updateIdToken', null);
+            localStorage.removeItem('idToken');
+            localStorage.removeItem('expiryTimeMs');
+            localStorage.removeItem('refreshToken');
+            router.replace('/login');
+        },
         register({ dispatch }, authData) {
             axios
                 .post(
