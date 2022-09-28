@@ -11,7 +11,7 @@
 		<label for="password">パスワード：</label>
 		<input
 			id="password"
-      type="password"
+			type="password"
 			v-model="password"
 		>
 		<br><br>
@@ -28,7 +28,7 @@
 			};
 		},
     methods: {
-      login() {
+    login() {
         this.$store.dispatch('login', {
           email: this.email,
           password: this.password
